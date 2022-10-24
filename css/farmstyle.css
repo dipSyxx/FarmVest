@@ -1,0 +1,1671 @@
+/* font-family: 'Lato', sans-serif;
+font-family: 'League Spartan', sans-serif; */
+
+body {
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    background-color: #263238;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+}
+
+/*при на тискані на бургер нізя скролити  сторінку*/
+body.lock {
+  overflow: hidden;/*при на тискані на бургер нізя скролити  сторінку*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.green {
+  color: #23B123;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+.reveal.animation{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* container--------------- */
+.container {
+    width: 100%;
+    max-width: 1635px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* block----------------- */
+.block {
+  width: 100%;
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* header ----------------------*/
+
+.header {
+padding: 30px 0;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+background-color: #263238;
+z-index: 50;
+transition: all 0.3s ease 0s;
+}
+
+.scrolled {
+background-color: rgba(0, 0, 0, 0.6);
+padding: 10px 0;
+}
+
+.container__big {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  align-items: center;
+}
+
+@media (max-width:1080px) {
+  .container__big{
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+
+.header__logo {
+  font-family: 'Lato', sans-serif;
+font-weight: 500;
+font-size: 36px;
+
+color: #FFFFFF;
+align-items: center;
+cursor: pointer;
+position: relative;
+z-index: 5;
+}
+
+
+/* decor circle na logo */
+.header__logo::before,
+.header__logo::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 500px;
+  height: 500px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: all 0.3s ease 0s;
+  /*pointer-events: none; забирає в before і after властивості силки */
+}
+
+.header__logo::before {
+  transform: translate(calc(-50% + 28px), -68%);
+}
+
+.header__logo::after {
+transform:translate(calc(-50% - 27px), calc(-68% + 40px));
+}
+
+.opacity::after,
+.opacity::before {
+  opacity: 0;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.light {
+  transition: all 0.3s ease 0s;
+}
+
+.header__logo:hover .light {
+  color: #23B123;
+}
+
+.header__menu {
+  
+}
+
+.menu {
+padding: 0 15px;
+}
+
+.menu__icon {
+  display: none;
+}
+
+.menu__body {
+
+}
+
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  column-gap: 44px;
+}
+
+@media (max-width:920px) {
+
+  .header__logo {
+    font-size: 29px;
+  }
+
+  .menu__list {
+    column-gap: 14px;
+  }
+}
+
+@media (max-width:768px) {
+  .header__logo::before,
+.header__logo::after {
+  width: 400px;
+  height: 400px;
+  opacity: 0.3;
+}
+
+.opacity::after,
+.opacity::before {
+  opacity: 0;
+}
+
+}
+
+  ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu__item {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #FFFFFF;
+}
+
+
+.menu__link {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__link:hover {
+  color: #23B123;
+}
+
+.menu__link.active {
+  color: #23B123;
+}
+
+
+
+.header__actions {
+  position: relative;
+z-index: 5;
+display: flex;
+align-items: center;
+gap: 16px;
+
+}
+
+.btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  display: inline-block;
+  vertical-align: top;
+  /*вирівнює по вертикалі (зверху томущо значеня top)*/
+  background-color: #23B123;
+  color: #fff;
+  padding: 21px 25px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.hide__btn {
+  display: none;
+}
+
+.btn:hover {
+  background-color: #228322;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.btn__border {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  display: inline-block;
+  vertical-align: top;
+  /*вирівнює по вертикалі (зверху томущо значеня top)*/
+  background-color: transparent;
+  color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  border: 1px solid #fff ;
+  text-decoration: none;
+}
+
+.btn__border:hover {
+  background-color: transparent;
+  color: #23B123;
+  border: 1px solid #23B123;
+}
+
+@media (max-width:990px) {
+  .btn {
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+
+  .btn__border {
+    padding: 17px 20px;
+  }
+  
+}
+
+/* burger */
+@media (max-width:768px) {
+  .menu__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    overflow: auto;
+    background-color: #1e262b;
+    opacity: 0.9;
+    padding-top: 180px;
+    
+  }
+
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    top:0;
+    left: -100%;
+    transition: all 0.3s ease 0s;
+    width: 100%;
+    height: 128px;
+    box-shadow: -1px 11px 5px 0px rgba(0,0,0,0.75);
+  }
+
+  .menu__body.left {
+    left: 0;
+  }
+
+  .menu__body.left::before {
+    left: 0;
+  }
+
+  .scrolled .menu__body::before {
+    height: 80px;
+  }
+
+  .menu__list {
+    flex-direction: column;
+    text-align: center;
+    row-gap: 50px;
+  }
+
+  .menu__item {
+    font-size: 40px;
+  }
+
+  .menu__icon {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 2px;
+    border: 0;
+    cursor: pointer;
+    z-index: 5;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu__icon.left {
+      background: inherit;
+  }
+
+  /* КРЕСТИК----------- */
+  .menu__icon.left::before {
+    /*точка транформації*/
+    transform-origin: left top;
+  
+    transform: rotate(45deg)
+    translateX(-2px);
+    margin-left: 5px;
+  }
+  
+  .menu__icon.left:after {
+    /*точка транформації*/
+    transform-origin: left bottom;
+  
+    transform: rotate(-45deg)
+    translateX(-3px);
+    margin-left: 5px;
+  }
+  /* КРЕСТИК----------- */
+
+  .menu__icon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 8px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu__icon::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: -8px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+}
+
+@media (max-width:471px) {
+  .hide__btn {
+    display: block;
+    font-size: 25px;
+    padding: 16px 26px;
+  }
+
+  .header__btn {
+    display: none;
+  }
+}
+
+@media (max-width:450px) {
+  .header__logo {
+    font-size: 26px;
+  }
+
+  .btn__border {
+    padding: 11px 13px;
+  }
+
+  .btn {
+    padding: 13px 10px;
+  }
+}
+
+
+
+/* main */
+
+.page {
+
+}
+
+.page__items {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.page__title {
+  max-width: 849px;
+  font-family: 'League Spartan', sans-serif;
+font-weight: 700;
+font-size: 70px;
+line-height: 78px;
+
+color: #FFFFFF;
+margin-bottom: 55px;
+}
+
+.page__subtitle {
+  max-width: 627px;
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 180%;
+
+color: #FFFFFF;
+margin-bottom: 40px;
+}
+
+.subscribe {
+  width: 100%;
+  max-width: 465px;
+}
+
+.subscribe__input {
+  width: 100%;
+    height: 77px;
+  background: #FFFFFF;
+border-radius: 10px;
+border: 1px solid;
+color: #333;
+font-size: 18px;
+text-align: center;
+margin-bottom: 10px;
+}
+
+.subscribe__input:focus {/*при на тискані інпут це фокус*/
+  outline: 0;/*delete line*/
+  border-color: #23B123;
+}
+
+.subscribe__input::placeholder {
+  color: #333;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.subscribe__btn {
+  width: 60%;
+  height: 55px;
+  font-family: 'Lato', sans-serif;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+display: inline-block;
+    vertical-align: top;
+    background-color: #23B123;
+    color: #fff;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.subscribe__btn:hover {
+  background-color: #228322;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+/* animated icon in window */
+
+.main-block {
+  padding-top: 225px;
+  padding-bottom: 210px;
+}
+
+.main-block__icons {
+
+}
+
+.icons-main-block {
+pointer-events: none;
+}
+
+.icons-main-block__item {
+  position: absolute;
+}
+
+.icons-main-block_1 {
+  top: 73%;
+  left: 2%;
+}
+
+.icons-main-block_2 {
+  top: 21%;
+  left: 16%;
+}
+
+.icons-main-block_3 {
+  top: 85%;
+  left: 23%;
+}
+
+.icons-main-block_4 {
+  top: -12%;
+  right: 27%;
+
+}
+
+.icons-main-block_5 {
+  top: 20%;
+  right: 4%;
+}
+
+.icons-main-block_6 {
+  top: 28%;
+  right: 18%;
+}
+
+.icons-main-block_7 {
+  top: 90%;
+    right: 17%;
+}
+
+
+@media (max-width:768px) {
+
+  .main-block {
+    padding-top: 183px;
+    padding-bottom: 135px;
+  }
+
+  .page__title {
+    font-size: 65px;
+    margin-bottom: 40px;
+  }
+
+  .icons-main-block {
+    opacity: 0.3;
+  }
+
+}
+
+@media (max-width:425px) {
+
+  .page__title {
+    font-size: 45px;
+    margin-bottom: 25px;
+  }
+
+  .page__subtitle {
+    font-size: 17px;
+    margin-bottom: 36px;
+  }
+  
+}
+
+/* partners */
+.partners {
+  padding-bottom: 200px;
+}
+
+.partnerts__items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+@media (max-width:1100px) {
+
+  .partnerts__items {
+    justify-content: center;
+  }
+  
+}
+
+.partnerts__item img {
+  max-width: 100%;
+  text-align: center;
+}
+
+@media (max-width:768px) {
+  .partners {
+    padding-bottom: 135px;
+  }
+  
+}
+
+/* page__how */
+
+.page__how {
+  padding-bottom: 200px;
+}
+
+.how__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.how__content {
+padding-right: 90px;
+}
+
+.how__title {
+  font-family: 'League Spartan', sans-serif;
+font-weight: 700;
+font-size: 64px;
+line-height: 72px;
+
+color: #FFFFFF;
+margin-bottom: 22px;
+}
+
+.how__suptitle {
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 177%;
+
+color: #FFFFFF;
+margin-bottom: 50px;
+}
+
+.how__steps {
+margin-bottom: 50px;
+}
+
+.how__steps:last-child {
+  margin-bottom: 0;
+}
+
+.steps-how {
+
+}
+
+.steps-how__item {
+display: flex;
+max-width: 490px;
+}
+
+.steps-how__icon {
+  margin-right: 30px;
+}
+.steps-how__body {
+
+}
+
+.steps-how__title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.steps-how__text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  
+  color: #FFFFFF;
+}
+
+.how__image {
+display: flex;
+align-items: center;
+}
+
+.how__image img {
+max-width: 100%;
+}
+
+@media (max-width:992px) {
+  .how__content {
+    padding-right: 50px;
+  }
+
+  .how__title {
+    font-size: 51px;
+  }
+
+  .how__suptitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:768px) {
+
+  .page__how {
+    padding-bottom: 135px;
+  }
+
+  .how__inner {
+    display: block;
+  }
+
+  .how__content {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .how__title {
+    font-size: 46px;
+  }
+
+  .steps-how__item {
+    display: block;
+    max-width: none;
+  }
+
+  .steps-how__icon {
+    margin-right: 0;
+  }
+
+  .how__steps:last-child {
+    margin-bottom: 50px;
+  }
+}
+
+/* pathway */
+.pathway {
+  padding-bottom: 200px;
+}
+
+.pathway__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pathway__image {
+  display: flex;
+  align-items: center;
+}
+
+.pathway__image img {
+  max-width: 100%;
+}
+
+.pathway__content {
+  padding-left: 126px;
+}
+
+.pathway__title {
+  font-family: 'League Spartan', sans-serif;
+font-weight: 700;
+font-size: 70px;
+line-height: 78px;
+
+color: #FFFFFF;
+margin-bottom: 25px;
+}
+
+.pathway__suptitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 177%;
+  
+  color: #FFFFFF;
+  margin-bottom: 38px;
+}
+
+/* spollers */
+
+.path__spollers {
+transition: all 0.3s ease 0s;
+}
+
+.spollers-pathway {
+margin-bottom: 24px;
+}
+
+.spollers-pathway__item {
+
+}
+
+.spollers-pathway__title {
+  width: 100%;
+  padding: 18px 30px;
+  text-align: left;
+  display: block;
+background: rgba(255, 255, 255, 0.05);
+display: flex;
+align-items: center;
+border: 0;
+font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 24px;
+line-height: 177%;
+
+color: #FFFFFF;
+justify-content: space-between;
+cursor: pointer;
+transition: background 0.3s ease 0s;
+}
+
+.spollers-pathway__title:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.spollers-pathway__title::after {
+  content: "";
+  background: url(../img/icon/arrow.svg) center / 100% no-repeat;
+  flex: 0 0 24px;
+  height: 24px;
+}
+
+.spollers-pathway__body {
+  display: none;
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 177%;
+
+color: #FFFFFF;
+
+padding: 15px 30px 24px 30px;
+background: rgba(148, 147, 147, 0.05);
+
+}
+
+.smooth {
+  transition: all 0.3s ease 0s;
+  opacity: 1;
+}
+
+.smooth::after {
+  transition: all 0.3s ease 0s;
+  transform: rotate(-180deg);
+}
+
+@media (max-width:768px) {
+  .pathway {
+    padding-bottom: 135px;
+  }
+
+  .pathway__title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .pathway__inner {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .pathway__image {
+    display: block;
+    text-align: center;
+  }
+
+  .pathway__content {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .spollers-pathway__body {
+    text-align: left;
+  }
+  
+}
+
+@media (max-width:496px) {
+  .pathway__title {
+    font-size: 47px;
+  }
+
+  .spollers-pathway__title {
+    font-size: 18px;
+  }
+}
+
+/* page__choose */
+.choose {
+padding-bottom: 200px;
+}
+
+.choose__inner {
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+.choose__content {
+  padding-right: 120px;
+
+}
+.choose__title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 78px;
+  
+  color: #FFFFFF;
+  margin-bottom: 25px;
+}
+
+.choose__suptitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 177%;
+  
+  color: #FFFFFF;
+  margin-bottom: 50px;
+}
+
+.choose__body {
+display: flex;
+flex-direction: column;
+}
+
+.choose__items {
+
+}
+
+.choose__item {
+display: flex;
+align-items: center;
+margin-bottom: 48px;
+}
+
+.choose__num.choose__num-1 {
+  padding: 6px 27px 2px 27px;
+}
+
+.choose__num.choose__num-2 {
+  padding: 5px 24px 5px 24px;
+}
+
+.choose__num {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  padding: 4px 25px;
+  margin-right: 50px;
+}
+
+.choose__text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+  
+  color: #FFFFFF;
+}
+
+.choose__btn {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  /*вирівнює по вертикалі (зверху томущо значеня top)*/
+  background-color: #23B123;
+  color: #fff;
+  padding: 21px 90px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.choose__btn:hover {
+  background-color: #228322;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+.choose__img img {
+max-width: 100%;
+}
+
+.choose__img {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width:926px) {
+  .choose__title {
+    font-size: 56px;
+    margin-bottom: 16px;
+  }
+
+  .choose__content {
+    padding-right: 50px;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .choose {
+    padding-bottom: 135px;
+  }
+
+  .choose__inner {
+    display: block;
+  }
+
+  .choose__content {
+    padding-right: 0;
+    text-align: center;
+    padding-bottom: 48px;
+  }
+
+  .choose__body {
+    display: inline-block;
+  }
+
+  .choose__item {
+    margin-bottom: 30px;
+  }
+
+  .choose__img {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width:357px) {
+  .choose__title {
+    font-size: 55px;
+  }
+
+  .choose__num {
+    margin-right: 20px;
+  }
+
+  .choose__text {
+    font-size: 19px;
+  }
+  
+}
+
+/* reviews */
+.reviews {
+padding-bottom: 200px;
+}
+
+.reviews__block {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.reviews__title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 78px;
+  margin: 0 auto;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.reviews__suptitle {
+  max-width: 528px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 177%;
+  margin: 0 auto;
+  text-align: center;
+  
+  color: #FFFFFF;
+  margin-bottom: 48px;
+}
+
+.reviews__items {
+  display: flex;
+}
+
+.reviews__item {
+  flex: 0 1 50%;
+  margin-right: 48px;
+  margin-bottom: 48px;
+}
+
+.nomargin {
+  margin-right: 0;
+}
+
+.item-review {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+border-radius: 20px;
+overflow: hidden;
+}
+
+.item-review__image {
+
+}
+
+.item-review__image img {
+  display: block;
+}
+
+.item-review__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  gap: 15px;
+}
+
+.item-review__text {
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 177%;
+
+color: #FFFFFF;
+
+}
+
+.item-review__name {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 177%;
+
+  color: #FFFFFF;
+}
+
+.reviews__btn {
+  padding: 18px 70px;
+}
+
+@media (max-width:1156px) {
+  .reviews__items {
+    display: block;
+  }
+
+  .item-review__body {
+    justify-content: center;
+  }
+
+  .reviews__item {
+    margin-right: 0;
+  }
+  
+}
+
+@media (max-width:768px) {
+  .reviews {
+    padding-bottom: 135px;
+  }
+  
+}
+
+@media (max-width:590px) {
+  .item-review {
+    display: block;
+  }
+
+  .reviews__title {
+    font-size: 53px;
+  }
+
+  .item-review__text {
+    font-size: 17px;
+  }
+
+  .item-review__image img {
+    display: none;
+  }
+  
+}
+
+/* download */
+.download {
+padding-bottom: 200px;
+}
+
+.download__body {
+  overflow: hidden;
+  position: relative;
+  padding: 55px 15px 55px 15px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.download__title {
+  max-width: 703px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 63px;
+  margin: 0 auto;
+  
+  color: #FFFFFF;
+  margin-bottom: 44px;
+}
+
+.download__apps {
+
+}
+
+.link__app {
+margin-right: 20px;
+}
+
+.link__app:last-child {
+  margin-right: 0;
+}
+
+.download__circle {
+position: absolute;
+top: 0;
+right: 0;
+width: 500px;
+height: 500px;
+}
+
+.download__circle::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.download__circle_1 {
+left: 450px;
+top: -18%;
+} 
+
+.download__circle_2 {
+right: 450px;
+top:-3%;
+}
+
+@media (max-width:768px) {
+  .download {
+    padding-bottom: 135px;
+  }
+
+  .download__title {
+    font-size: 39px;
+  }
+}
+
+@media (max-width:680px) {
+  .download__circle::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+}
+
+@media (max-width:441px) {
+  .link__app {
+    margin-right: 0;
+  }
+}
+
+/* footer */
+.footer {
+  background: rgba(53, 64, 70, 0.5);
+  padding-top: 68px;
+  padding-bottom: 1px;
+}
+
+.footer__inner {
+  display: flex;
+}
+
+/* footer__col-1+++++++++++++++ */
+.footer__col-1 {
+  width: 34%;
+  padding-right: 30px;
+}
+
+.footer__logo {
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  max-width: 309px;
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 177%;
+
+color: #FFFFFF;
+}
+
+
+/* footer__col-2+++++++++++++++ */
+.footer__col-2 {
+  width: 45%;
+  padding-right: 30px;
+}
+
+.subcribe__text {
+  max-width: 370px;
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 18px;
+line-height: 177%;
+
+color: #FFFFFF;
+margin-bottom: 20px;
+}
+
+.footer__subscribe {
+  width: 100%;
+  max-width: 455px;
+  display: flex;
+  position: relative;
+}
+
+.footer__subscribe__input {
+  width: 100%;
+
+  height: 65px;
+  padding: 12px 0 12px 25px;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  font-size: 18px;
+  color: #333;
+  border-radius: 10px;
+  font-weight: 300;
+}
+
+.footer__subscribe__input:focus {/*при на тискані інпут це фокус*/
+  outline: 0;/*delete line*/
+  border-color: #23B123;
+}
+
+.footer__subscribe__input::placeholder {
+  color: #333;
+}
+
+.footer__subscribe__btn {
+  position: absolute;
+    align-items: center;
+    padding: 17px 20px;
+    font-size: 17px;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    background: #23B123;
+    border: 0ch;
+    color: #FFFFFF;
+    right: 1%;
+    top: 8%;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.footer__subscribe__btn:hover {
+  background-color: #228322;
+}
+
+
+/* footer__col-3+++++++++++++++ */
+
+.footer__col-3 {
+width: 23%;
+padding-right: 30px;
+}
+
+.follow__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow__col-1 {
+padding-right: 10px;
+}
+
+.follow__title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.follow__social {
+display: flex;
+}
+
+.follow__item {
+  width: 45px;
+  height: 45px;
+  padding: 9px;
+  background-color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+  line-height: 1;
+  border-radius: 50%;
+  margin-right: 15px;
+  transition: all 0.3s ease 0s;
+}
+
+.follow__item:hover {
+  box-shadow: -7px -5px 5px 0px rgba(0,0,0,0.75);
+  transform: translate(3px,3px);
+  background-color: #333;
+}
+
+.facebook {
+  padding: 10px 10px 10px 12px;
+}
+
+.follow__link {
+  text-decoration: none;
+  color: #23B123;
+  transition: all 0.3s ease 0s;
+}
+
+.follow__link:hover {
+color: #fff;
+}
+
+.call__title {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.call__number {
+
+}
+
+.call__link {
+text-decoration: none;
+color: #fff;
+transition: all 0.3s ease 0s;
+}
+
+.call__link:hover {
+  color: #23B123;
+}
+
+.line {
+margin-top: 100px;
+margin-bottom: 60px;
+border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+/* footer__privacy */
+.privacy {
+  padding-bottom: 50px;
+}
+
+.privacy__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.privacy__text {
+  font-family: 'Lato', sans-serif;
+font-weight: 300;
+font-size: 14px;
+line-height: 13px;
+opacity: 0.5;
+
+color: #FFFFFF;
+}
+
+.privacy__privacy {
+  display: flex;
+}
+
+.privacy__item {
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
+margin-right: 40px;
+opacity: 0.6;
+transition: all 0.3s ease 0s;
+}
+
+.privacy__item:hover {
+opacity: 1;
+}
+
+.privacy__item:last-child {
+  margin-right: 0;
+}
+
+@media (max-width:1430px) {
+  .footer__col-3 {
+    width: 25%;
+  }
+
+  .follow__inner {
+    display: block;
+  }
+
+  .follow__col-1 {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width:768px) {
+  .footer__inner {
+    display: block;
+    text-align: center;
+  }
+
+  .footer__col-1 {
+    padding-bottom: 40px;
+  }
+
+  .colums {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .footer__col-2 {
+    padding-bottom: 40px;
+  }
+
+  .footer__text {
+    max-width: none;
+  }
+
+  .subcribe__text {
+    max-width: none;
+  }
+
+  .footer__subscribe {
+    max-width: none;
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .follow__col-1 {
+    padding-right: 0;
+    padding-bottom: 40px;
+  }
+
+  .follow__social {
+    justify-content: center;
+  }
+
+  .twit {
+    margin-right: 0;
+  }
+
+  .line {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .privacy {
+    padding-bottom: 25px;
+  }
+
+  .privacy__inner {
+    display: block;
+    text-align: center;
+  }
+  .privacy__text {
+    padding-bottom: 20px;
+  }
+  .privacy__privacy {
+    flex-direction: column;
+  }
+  .privacy__item {
+    margin-right: 0;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width:475px) {
+  .footer__subscribe {
+    display: block;
+    width: 85%;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .footer__subscribe__btn {
+    margin-top: 10px;
+    position:relative;
+    right: 0;
+    width: 95%;
+    margin-bottom: 10px;
+  }
+}
